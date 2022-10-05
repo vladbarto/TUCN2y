@@ -1,0 +1,3 @@
+/home/vlad/Documents/TUCN/Second Year/Algoritmi Fundamentali/Laborator 1/primul_program/cmake-build-debug/CMakeFiles/primul_program.dir
+/home/vlad/Documents/TUCN/Second Year/Algoritmi Fundamentali/Laborator 1/primul_program/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/vlad/Documents/TUCN/Second Year/Algoritmi Fundamentali/Laborator 1/primul_program/cmake-build-debug/CMakeFiles/rebuild_cache.dir
