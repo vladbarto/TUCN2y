@@ -1,0 +1,60 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.23"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "Bubble_Sort",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "Bubble_Sort::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Bubble_Sort-Debug-35ecad3736f744cd2f7f.json",
+					"name" : "Bubble_Sort",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/vlad/Documents/TUCN/Second Year/Algoritmi Fundamentali/Tema Seminar 1/Bubble_Sort/cmake-build-debug",
+		"source" : "/home/vlad/Documents/TUCN/Second Year/Algoritmi Fundamentali/Tema Seminar 1/Bubble_Sort"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 4
+	}
+}
