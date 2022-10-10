@@ -1,6 +1,7 @@
 #include <stdio.h>
 #define MAX_SIZE 100
 #include <stdlib.h>
+#include "Profiler.h"
 int main() {
     //zona de declaratii variabile
     int v[MAX_SIZE];
@@ -8,6 +9,11 @@ int main() {
     int i = 0, x;
     FILE *pi = NULL; //pi - pointer la fisierul de Input
     FILE *po = NULL; // po - pointer la fisierul de Output
+
+    //zona de Profiler
+    Operation opComp = p.createOperation("A-comp", n);
+    Operation opAtrib= p.createOperation("A-atrib", n);
+
 
     //zona de citire
     printf("n="); scanf("%d", &n);

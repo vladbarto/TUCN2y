@@ -4,3 +4,4 @@ project(Insertion_Sort C)
 set(CMAKE_C_STANDARD 99)
 
 add_executable(Insertion_Sort main.c)
+include_directories("Profiler.h")
