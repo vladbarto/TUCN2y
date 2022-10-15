@@ -1,0 +1,79 @@
+select upper(titlu_mat)
+from examen
+
+select lower(strada)
+from adresa
+
+select Initcap(lower(nume))
+from student
+
+select concat(nume, ' TUCN')
+from student
+
+select substr(nume, 3, 3)
+from student
+
+select prenume, length(prenume)
+from student
+
+select nume, instr(nume, 'Be')
+from student
+
+select rpad(lpad(titlu_mat, length(titlu_mat)+4, '!'), length(lpad(titlu_mat, length(titlu_mat)+4, '!'))+3, '/')
+from examen
+
+select trim(trailing 'e' from titlu_mat)
+from examen
+
+select replace(titlu_mat, 'e', 'x')
+from examen
+
+select round(nota) from nota
+
+select trunc(nota, -1) from nota
+
+select nota, case mod(nota, 3)
+when 0 then 'se imparte'
+when 1 then 'rest 1'
+else 'rest 2' 
+end as "output"
+from nota
+
+select round(months_between(sysdate, data_n)) luniIntre, nume, data_n
+from student
+
+select add_months(data_n, 4) luniIntre, nume, data_n
+from student
+
+select next_day(data_n, 'friday') urmZi, nume, data_n
+from student
+
+select last_day(data_n) ultZi, nume, data_n
+from student
+
+select round(data_n, 'month') output, nume, data_n
+from student
+
+select trunc(data_n, 'month') output, nume, data_n
+from student
+
+select nume, data_n, to_char(data_n, 'month fmddspth, yyyy')
+from student
+
+select nume, data_n, to_number(to_char(data_n, 'fmdd'))
+from student
+
+pt to_date nu am nimica
+nu stiu folosi decode aparent
+
+select nullif(coda, 5)
+from student 
+
+select nvl(sot, 0)
+from student 
+
+select nvl2(sot, sot, 0)
+from student 
+
+select nvl2(sot, sot, 0)
+from student 
