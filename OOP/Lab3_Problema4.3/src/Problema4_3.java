@@ -13,7 +13,7 @@ public class Problema4_3 {
 		
 		//zona de prelucrare convenabila a stringului s
 		s = s.toLowerCase();
-		s = s.replaceAll("\\s+", "");
+		///s = s.replaceAll("\\s+", "");
 		System.out.println("s este " + s);
 		
 		//zona de contorizare
