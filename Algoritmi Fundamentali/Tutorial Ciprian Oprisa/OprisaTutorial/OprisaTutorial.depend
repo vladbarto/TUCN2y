@@ -1,0 +1,20 @@
+# depslib dependency file v1.0
+1665990829 source:c:\users\vladb\documents\codeblocksprojects\oprisatutorial\main.cpp
+	<iostream>
+	<stdlib.h>
+	"Profiler.h"
+
+1521100804 c:\users\vladb\documents\codeblocksprojects\oprisatutorial\profiler.h
+	<Windows.h>
+	<Shellapi.h>
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	<time.h>
+	<typeinfo>
+	<map>
+	<vector>
+	<algorithm>
+	<functional>
+	<string>
+
