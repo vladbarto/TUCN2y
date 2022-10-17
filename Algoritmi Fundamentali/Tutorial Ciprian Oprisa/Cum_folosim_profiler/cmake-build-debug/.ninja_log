@@ -1,11 +1,5 @@
 # ninja log v5
-0	434	1665556185733420653	CMakeFiles/Cum_folosim_profiler.dir/main.cpp.o	1e402067ecace594
-435	485	1665556185781425156	Cum_folosim_profiler	17c3d3aa792c2f5e
-0	432	1665556252131350814	CMakeFiles/Cum_folosim_profiler.dir/main.cpp.o	1e402067ecace594
-432	493	1665556252191355949	Cum_folosim_profiler	17c3d3aa792c2f5e
-1	425	1665556510407511961	CMakeFiles/Cum_folosim_profiler.dir/main.cpp.o	1e402067ecace594
-425	476	1665556510455503359	Cum_folosim_profiler	17c3d3aa792c2f5e
-0	437	1665556641788938048	CMakeFiles/Cum_folosim_profiler.dir/main.cpp.o	1e402067ecace594
-437	491	1665556641840934802	Cum_folosim_profiler	17c3d3aa792c2f5e
-0	425	1665556650140435549	CMakeFiles/Cum_folosim_profiler.dir/main.cpp.o	1e402067ecace594
-425	491	1665556650204431840	Cum_folosim_profiler	17c3d3aa792c2f5e
+0	531	1665999551214070795	CMakeFiles/Cum_folosim_profiler.dir/main.cpp.o	1e402067ecace594
+531	586	1665999551266072473	Cum_folosim_profiler	17c3d3aa792c2f5e
+0	503	1665999637364691982	CMakeFiles/Cum_folosim_profiler.dir/main.cpp.o	13a317e5fc65c62f
+503	551	1665999637412693371	Cum_folosim_profiler	17c3d3aa792c2f5e
