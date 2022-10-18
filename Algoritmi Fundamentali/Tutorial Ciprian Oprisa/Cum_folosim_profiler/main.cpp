@@ -39,10 +39,14 @@ void secondMin_v1(int v[], int n, int *min, int *min2)
     opAtrib.count();
     for(int i = 0; i <= n; i++)
     {
-        if(i != min)
+        opComp.count();
+        if(i != pmin)
         {
             if(v[i] < *min2)
+            {
+                opAtrib.count();
                 *min2 = v[i];
+            }
         }
     }
 }
