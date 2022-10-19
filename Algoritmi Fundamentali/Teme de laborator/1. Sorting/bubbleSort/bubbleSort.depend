@@ -1,0 +1,21 @@
+# depslib dependency file v1.0
+1666119831 source:c:\users\vladb\documents\tucn2y\algoritmi fundamentali\teme de laborator\1. sorting\bubblesort\main.cpp
+	<iostream>
+	<stdlib.h>
+	"Profiler.h"
+	<stdbool.h>
+
+1521100804 c:\users\vladb\documents\tucn2y\algoritmi fundamentali\teme de laborator\1. sorting\bubblesort\profiler.h
+	<Windows.h>
+	<Shellapi.h>
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	<time.h>
+	<typeinfo>
+	<map>
+	<vector>
+	<algorithm>
+	<functional>
+	<string>
+
