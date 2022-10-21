@@ -1,0 +1,25 @@
+Bartolomei Vlad-Alexandru, an 2 CTI, grupa 30229
+
+5.6.1. "Cine sunt studenții ce studiază cu profesorul 'Pop'?"
+R:select s.nume, e.nume_p
+from student s, examen e
+where e.nume_p = 'Pop'
+
+concluzie: profesorul pop nu e in baza de date
+5.6.2. "Cine sunt profesorii studentului 'Ionescu'?"
+nota: studentul Ionescu nu e in baza de date
+
+5.6.3."Afișează studenții născuți înainte de 01-04-1985."
+select Nume || prenume as "Student"
+from student
+where data_n < '01-Apr-1985'
+
+5.6.4. "Afișează studenții ce nu locuiesc în cămin.
+select Nume || ' ' || prenume as "Student"
+from student inner join adresa using (coda)
+where fel != 'Camin'
+
+5.6.5. "Afișează studenții care au luat aceleași note ca și studentul cu numărul matricol 14.
+select nume || ' ' || prenume as "Nume Student"
+from student inner join nota using (NR_MATR)
+where nota = (select nota from nota where nr_matr = 14)
