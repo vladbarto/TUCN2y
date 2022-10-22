@@ -1,0 +1,23 @@
+[aimspice]
+[description]
+109
+Redresor Monoalternanta
+D1 1 2 DiodaSi
+.Model DiodaSi D tt = 1e-9
+R 2 0 100
+VIN 1 0 DC 5 SIN(0 10 1K 0 0)
+[tran]
+1E-9
+6E-3
+0
+0.00001
+0
+[ana]
+4 1
+0
+1 1
+1 1 -10 10
+2
+v(1)
+v(2)
+[end]
