@@ -219,11 +219,38 @@ void demo_HeapSort()
     //BUILD_HEAP_bottomUp(H, n, 0);
     listHeap(H, n);
     //HEAPSORT(H, n, 0);
+}
+void copySir(int A[], int B[], int n)
+{
+    for(int i = 0; i < n; i++)
+        B[i] = A[i];
+}
+void perf()
+{
+    int H[MAX_SIZE], H_copy[MAX_SIZE];
+    int n;
+    for(n = STEP_SIZE; n <= MAX_SIZE; n += STEP_SIZE){
+            for(int test = 0; test < NR_TESTS; test++){
+                FillRandomArray(H, n);
+                copySir(H, H_copy, n);
+                BUILD_HEAP_bottomUp(H, n, 1);
+                copySir(H_copy, H, n);
+                BUILD_HEAP_topDown(H, n, 1);
+            }
+    }
+    p.divideValues("topdown-c", NR_TESTS);
+    p.addSeries("topdown", "topdown-a", "topdown-c");
 
+    p.createGroup("atribuiri", "bottomup-a", "topdown-a");
+    p.createGroup("comparatii", "bottomup-c", "topdown-c");
+    p.createGroup("total", "bottomup", "topdown");
+
+    p.showReport();
 }
 int main() {
     //demo_HeapSort();
     //demo_bottomUp();
     //demo_topDown();
+    perf();
     return 0;
 }
