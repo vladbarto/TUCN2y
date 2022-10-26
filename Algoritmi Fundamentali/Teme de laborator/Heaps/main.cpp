@@ -1,3 +1,4 @@
+///Bartolomei Vlad
 /*
     PENTRU AVERAGE CASE:
     Atribuiri: curbele nu se suprapun, insa exista totusi o diferenta sesizabila. De la 500 pana la 50000 de atribuiri, overall.
@@ -168,30 +169,31 @@ void BUILD_HEAP_topDown(int H[], int n, int typeOfHeap)
                 if (typeOfHeap == 0)
                 {
                     opComp2.count();
-                    if (sequence[index] < sequence[index / 2]) //daca valoarea fiului nou este mai mare decat valoarea parintelui
+                    if (sequence[index] < sequence[(index-1) / 2]) //daca valoarea fiului nou este mai mare decat valoarea parintelui
                     {
                         opAtrib2.count(3);
                         aux = sequence[index];
-                        sequence[index] = sequence[index / 2];
-                        sequence[index / 2] = aux;
+                        sequence[index] = sequence[(index-1) / 2];
+                        sequence[(index-1) / 2] = aux;
                     }
                 }
-                else
+                else //In functie de ce vrem, heap minim sau heap maxim
                 {
                     opComp2.count();
-                    if (sequence[index] > sequence[index / 2]) //daca valoarea fiului nou este mai mica decat valoarea parintelui
+                    if (sequence[index] > sequence[(index-1) / 2]) //daca valoarea fiului nou este mai mica decat valoarea parintelui
                     {
                         opAtrib2.count(3);
                         aux = sequence[index];
-                        sequence[index] = sequence[index / 2];
-                        sequence[index / 2] = aux;
+                        sequence[index] = sequence[(index-1) / 2];
+                        sequence[(index-1) / 2] = aux;
                     }
                 }
-                index = index / 2; //continuam cu indexul sa vedem ce se intampla in relatia parinte-bunic s.o.
+                index = (index - 1) / 2; //continuam cu indexul sa vedem ce se intampla in relatia parinte-bunic s.o.
             }
         }
         SIZE++;
     }
+    //printf("He");listHeap(sequence, SIZE);
     //Now we transcribe (transcriem) the 'sequence[]' array into the original 'H[]' array
     for (int i = 0; i < n; i++) {
         opAtrib2.count();
@@ -200,9 +202,9 @@ void BUILD_HEAP_topDown(int H[], int n, int typeOfHeap)
 }
 void HEAPSORT(int H[], int n, int typeOfHeap)
 {
-    BUILD_HEAP_topDown(H, n, typeOfHeap); ///O(n)
+    BUILD_HEAP_bottomUp(H, n, typeOfHeap); ///O(n)
     int aux = 0;
-    for (int i = n - 1; i >= 1; i--) //n-1 times
+    for (int i = n - 1; i >= 0; i--) //n-1 times
     {
         //listHeap(H, n);
         printf("<%d> ", H[0]);
@@ -214,31 +216,36 @@ void HEAPSORT(int H[], int n, int typeOfHeap)
             maxHeapify(H, n, 0);
         listHeap(H, n);
     }
+    printf("<%d> ", H[0]);
     printf("\n");
 }
 void demo_bottomUp()
 {
     //int H[] = {35, 33, 42, 10, 19, 27, 44, 26, 31};
-    int H[] = { 7, 5, 2, 4, 2, 1, 2, 3 };
+    int H[] = { 5, 7, 2, 4, 2, 1, 2, 3 };
     int n = sizeof(H) / sizeof(H[0]);
-    BUILD_HEAP_bottomUp(H, n, 0);
+    listHeap(H, n);
+    BUILD_HEAP_bottomUp(H, n, 1);
     listHeap(H, n);
 }
 void demo_topDown()
 {
-    int H[] = { 35, 33, 42, 10, 19, 27, 44, 26, 31 };
+    //int H[] = { 35, 33, 42, 10, 19, 27, 44, 26, 31 };
+    int H[] = {5,4,3,2,1,2,6};
     int n = sizeof(H) / sizeof(H[0]);
+    listHeap(H, n);
     BUILD_HEAP_topDown(H, n, 1);
     listHeap(H, n);
 }
 void demo_HeapSort()
 {
-    int H[] = { 7, 5, 2, 4, 2, 1, 2, 3 };
+    //int H[] = { 7, 5, 2, 4, 2, 1, 2, 3 };
+    int H[] = {5,4,3,2,1,2,6};
     int n = sizeof(H) / sizeof(H[0]);
-    BUILD_HEAP_topDown(H, n, 0);
+    BUILD_HEAP_topDown(H, n, 1);
     //BUILD_HEAP_bottomUp(H, n, 0);
     listHeap(H, n);
-    //HEAPSORT(H, n, 0);
+    HEAPSORT(H, n, 1);
 }
 void copySir(int A[], int B[], int n)
 {
@@ -282,9 +289,10 @@ void perf_all()
     p.showReport();
 }
 int main() {
-    //demo_HeapSort();
+    demo_HeapSort();
+
     //demo_bottomUp();
     //demo_topDown();
-    perf_all();
+    //perf_all();
     return 0;
 }

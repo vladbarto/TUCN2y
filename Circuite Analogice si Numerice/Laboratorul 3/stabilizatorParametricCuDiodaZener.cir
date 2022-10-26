@@ -1,0 +1,28 @@
+[aimspice]
+[description]
+233
+Stabilizator Parametric cu Dioda Zener
+D1 1 out DiodaSi
+D2 0 1 DiodaSi
+D3 0 3 DiodaSi
+D4 3 out DiodaSi
+.Model DiodaSi D tt = 1e-9
+Dz 0 out Zener
+.Model Zener D bv = 6.8
+RL out 0 100
+C1 out 0 1m
+VIN 1 3 DC 5 sin(0 10 50 0 0)
+[tran]
+1e-9
+60e-3
+X
+X
+0
+[ana]
+4 1
+0
+1 1
+1 1 -3.44663E-29 8
+1
+v(out)
+[end]

@@ -1,0 +1,32 @@
+[aimspice]
+[description]
+331
+Stabilizator cu Reactie fara Amplificator de Eroare
+D1 1 outr DiodaSi
+D2 0 1 DiodaSi
+D3 0 3 DiodaSi
+D4 3 outr DiodaSi
+.Model DiodaSi D tt = 1e-9
+Dz 0 out Zener
+.Model Zener D bv = 5.6
+R1 out 0 100
+C1 outr 0 1m
+R2 outr Vz 220
+Q1 outr Vz out tranzistor
+.Model tranzistor npn tr=1e-9 tf=1e-9
+VIN 1 3 DC 5 sin(0 10 50 0 0)
+[tran]
+1e-9
+60e-3
+X
+X
+0
+[ana]
+4 1
+0
+1 1
+1 1 -4.0921E-19 10
+2
+v(outr)
+v(out)
+[end]

@@ -18,3 +18,22 @@
 	<functional>
 	<string>
 
+1666752622 source:c:\users\vladb\documents\tucn2y\algoritmi fundamentali\teme de laborator\heaps\main.cpp
+	<iostream>
+	<stdlib.h>
+	"Profiler.h"
+
+1521100804 c:\users\vladb\documents\tucn2y\algoritmi fundamentali\teme de laborator\heaps\profiler.h
+	<Windows.h>
+	<Shellapi.h>
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	<time.h>
+	<typeinfo>
+	<map>
+	<vector>
+	<algorithm>
+	<functional>
+	<string>
+
