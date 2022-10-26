@@ -37,116 +37,57 @@ int right(int i)
 void listHeap(int H[], int n)
 {
     for (int i = 0; i < n; i++)
-        std::cout << H[i] << " ";
+        printf("%d ", H[i]);
     printf("\n");
 }
-int indexOfMin(int H[], int a, int b, int c, int n)
-{//a, b si c sunt indecsii (see call)
-    Operation opComp = p.createOperation("bottomup-c", n);
-    Operation opAtrib = p.createOperation("bottomup-a", n);
-    opAtrib.count();
-    int minimum = H[a], minIndex = a;
-    opComp.count();
-    if (H[b] < minimum)
-    {
-        opAtrib.count();
-        minimum = H[b];
-        minIndex = b;
-    }
-    else
-    {
-        opComp.count();
-        if (H[c] < minimum)
-        {
-            opAtrib.count();
-            minimum = H[c];
-            minIndex = c;
-        }
-    }
-    return minIndex;
-}
 int indexOfMax(int H[], int a, int b, int c, int n)
-{//a, b si c sunt indecsii
-    Operation opComp = p.createOperation("bottomup-c", n);
-    Operation opAtrib = p.createOperation("bottomup-a", n);
-    opAtrib.count();
+{
+    Operation Atrib = Profiler::createOperation("BottomUpAtrib", n);
+    Operation Comp = Profiler::createOperation("BottomUpComp", n);
+    Atrib.count();
     int maximum = H[a], maxIndex = a;
-    opComp.count();
-    if (H[b] > maximum)
+    Comp.count(2);
+    if (H[b] > maximum && H[b]>=H[c]) //what if un parinte ar avea doi copii cu informatie egala? e.g. 2,3,3
     {
-        opAtrib.count();
-        maximum = H[b];
         maxIndex = b;
     }
     else
     {
-        opComp.count();
-        if (H[c] > maximum) {
-            opAtrib.count();
-            maximum = H[c];
+        Comp.count(2);
+        if (H[c] > maximum && H[c]>H[b])
+        {
             maxIndex = c;
         }
     }
     return maxIndex;
 }
-void minHeapify(int H[], int n, int i)
+void maxHeapify(int H[], int n, int nodStart)
 {
-    //Operation opComp = p.createOperation("bottomup-c", n);
-    Operation opAtrib = p.createOperation("bottomup-a", n);
-    int smallest;
-    if (i == (n / 2 - 1) && right(i) > n - 1)
-    {
-        smallest = indexOfMin(H, i, left(i), left(i), n);
-    }
+    Operation Atrib = createOperation("BottomUpAtrib", n);
+    Operation Comp = createOperation("BottomUpComp", n);
+    int dreapta;
+    if (right(nodStart) > n - 1)
+        dreapta = left(nodStart);
     else
+        dreapta = right(nodStart);
+    int largest = indexOfMax(H, nodStart, left(nodStart), dreapta, n);
+    if (largest != nodStart)
     {
-        smallest = indexOfMin(H, i, left(i), right(i), n);
-    }
-    opAtrib.count();
-    int aux = H[i];
-    if (smallest != i)
-    {
-        //swap(H[i], H[smallest]);
-        opAtrib.count(3);
-        aux = H[i]; H[i] = H[smallest]; H[smallest] = aux;
-        if (smallest < n / 2)
-            minHeapify(H, n, smallest);
-    }
-}
-void maxHeapify(int H[], int n, int i)//i este nodul apelat
-{
-    //Operation opComp = p.createOperation("bottomup-c", n);
-    Operation opAtrib = p.createOperation("bottomup-a", n);
-    int largest;
-    if (i == (n / 2 - 1) && right(i) > n - 1)
-        largest = indexOfMax(H, i, left(i), left(i), n);
-    else
-        largest = indexOfMax(H, i, left(i), right(i), n);
-    opAtrib.count();
-    int aux = H[i];
-    if (largest != i)
-    {
-        //swap(H[i], H[largest]);
-        opAtrib.count(3);
-        aux = H[i]; H[i] = H[largest]; H[largest] = aux;
-        if (largest < n / 2)
+        Atrib.count();
+        swap(H[nodStart], H[largest]);
+        if (largest <= n/2 - 1) //pozitia lui n/2-1 este ultimul nod intern care sigur este parinte
             maxHeapify(H, n, largest);
     }
 }
-void BUILD_HEAP_bottomUp(int H[], int n, int typeOfHeap)
+void BUILD_HEAP_bottomUp(int H[], int n)
 {
-    //0 - minHeap, 1 - maxHeap
     for (int i = n / 2 - 1; i >= 0; i--)
-    {
-        if (typeOfHeap == 0)
-            minHeapify(H, n, i);
-        else
-            maxHeapify(H, n, i);
-    }
+        maxHeapify(H, n, i);
 }
-
-void BUILD_HEAP_topDown(int H[], int n, int typeOfHeap)
+void BUILD_HEAP_topDown(int H[], int n)
 {
+    Operation Atrib2 = Profiler::createOperation("TopDownAtrib", n);
+    Operation Comp2 = Profiler::createOperation("TopDownComp", n);
     /*
      * Pasul 1: Se creeaza un nod nou la sfarsitul Heap-ului (nod fiu)
      * Pasul 2: Se asigneaza o valoare nodului nou
@@ -154,98 +95,75 @@ void BUILD_HEAP_topDown(int H[], int n, int typeOfHeap)
      * Pasul 4: Daca valoarea parintelui este mai mare(mica, dupa caz) decat valoarea din fiu, atunci se interschimba
      * Pasul 5: Se repeta pasii 3 si 4 pana cand proprietatea de Heap e adevarata
      */
-    Operation opComp2 = p.createOperation("topdown-c", n);
-    Operation opAtrib2 = p.createOperation("topdown-a", n);
-    int sequence[n], SIZE = 0, aux = 0, index;
-    while (SIZE < n)
+    int* sequence = (int*)malloc(n * sizeof(int));
+    int SIZE = 0, aux = 0, index;
+    for(SIZE = 0; SIZE < n; SIZE++)
     {
-        opAtrib2.count();
+        Atrib2.count();
         sequence[SIZE] = H[SIZE];
         if (SIZE > 0)
         {
             index = SIZE;
             while (index > 0)
             {
-                if (typeOfHeap == 0)
+                Comp2.count();
+                if (sequence[index] > sequence[(index-1)/2]) //daca valoarea fiului nou este mai mica decat valoarea parintelui
                 {
-                    opComp2.count();
-                    if (sequence[index] < sequence[(index-1) / 2]) //daca valoarea fiului nou este mai mare decat valoarea parintelui
-                    {
-                        opAtrib2.count(3);
-                        aux = sequence[index];
-                        sequence[index] = sequence[(index-1) / 2];
-                        sequence[(index-1) / 2] = aux;
-                    }
+                    Atrib2.count();
+                     swap(sequence[index], sequence[(index - 1) / 2]);
                 }
-                else //In functie de ce vrem, heap minim sau heap maxim
-                {
-                    opComp2.count();
-                    if (sequence[index] > sequence[(index-1) / 2]) //daca valoarea fiului nou este mai mica decat valoarea parintelui
-                    {
-                        opAtrib2.count(3);
-                        aux = sequence[index];
-                        sequence[index] = sequence[(index-1) / 2];
-                        sequence[(index-1) / 2] = aux;
-                    }
-                }
-                index = (index - 1) / 2; //continuam cu indexul sa vedem ce se intampla in relatia parinte-bunic s.o.
+            index = (index - 1) / 2; //continuam cu indexul sa vedem ce se intampla in relatia parinte-bunic s.o.
             }
         }
-        SIZE++;
     }
-    //printf("He");listHeap(sequence, SIZE);
     //Now we transcribe (transcriem) the 'sequence[]' array into the original 'H[]' array
     for (int i = 0; i < n; i++) {
-        opAtrib2.count();
+        Atrib2.count();
         H[i] = sequence[i];
     }
 }
-void HEAPSORT(int H[], int n, int typeOfHeap)
+void HEAPSORT(int H[], int n)
 {
-    BUILD_HEAP_bottomUp(H, n, typeOfHeap); ///O(n)
-    int aux = 0;
-    for (int i = n - 1; i >= 0; i--) //n-1 times
+    BUILD_HEAP_bottomUp(H, n);
+    int i;
+    for (i = n - 1; i >= 1; i--)
     {
-        //listHeap(H, n);
-        printf("<%d> ", H[0]);
-        aux = H[0]; H[0] = H[i]; H[i] = aux; ///O(1)
-        n--; ///O(1)
-        if (typeOfHeap == 0)
-            minHeapify(H, n, 0);
-        else
+        printf("(%d)\n", H[0]);
+        swap(H[i], H[0]);
+        n--;
+        if(n>1)
             maxHeapify(H, n, 0);
-        listHeap(H, n);
+        printf("\n");
     }
-    printf("<%d> ", H[0]);
-    printf("\n");
+    cout << "["; listHeap(H, n);
+    printf("(%d)\n", H[i]);
 }
 void demo_bottomUp()
 {
-    //int H[] = {35, 33, 42, 10, 19, 27, 44, 26, 31};
-    int H[] = { 5, 7, 2, 4, 2, 1, 2, 3 };
-    int n = sizeof(H) / sizeof(H[0]);
-    listHeap(H, n);
-    BUILD_HEAP_bottomUp(H, n, 1);
+    int H[] = { 16, 10, 24 , 9, 33, 6, 48, 5};
+    //int H[] = { 5,4,3,2,1,2,6,1,3 };
+    //int H[] = { 1,2,3,4,5,6,7,8 };
+    int n = sizeof(H) / sizeof(n);
+    BUILD_HEAP_bottomUp(H, n);
     listHeap(H, n);
 }
 void demo_topDown()
 {
-    //int H[] = { 35, 33, 42, 10, 19, 27, 44, 26, 31 };
-    int H[] = {5,4,3,2,1,2,6};
-    int n = sizeof(H) / sizeof(H[0]);
-    listHeap(H, n);
-    BUILD_HEAP_topDown(H, n, 1);
+    int H[] = { 16, 10, 24 , 9, 33, 6, 48, 5 };
+    //int H[] = { 5,4,3,2,1,2,6,1,3 };
+    //int H[] = { 1,2,3,4,5,6,7,8 };
+    int n = sizeof(H) / sizeof(n);
+    BUILD_HEAP_topDown(H, n);
     listHeap(H, n);
 }
-void demo_HeapSort()
+void demo_heapsort()
 {
-    //int H[] = { 7, 5, 2, 4, 2, 1, 2, 3 };
-    int H[] = {5,4,3,2,1,2,6};
-    int n = sizeof(H) / sizeof(H[0]);
-    BUILD_HEAP_topDown(H, n, 1);
-    //BUILD_HEAP_bottomUp(H, n, 0);
-    listHeap(H, n);
-    HEAPSORT(H, n, 1);
+    int H[] = { 16, 10, 24 , 9, 33, 6, 48, 5 };
+    //int H[] = { 5,4,3,2,1,2,6,1,3 };
+    //int H[] = { 1,2,3,4,5,6,7,8 };
+    //int H[] = { 1,1,2,2,2,3,4,4,4,5 };
+    int n = sizeof(H) / sizeof(n);
+    HEAPSORT(H, n);
 }
 void copySir(int A[], int B[], int n)
 {
@@ -260,39 +178,37 @@ void perf(int order)
         for (int test = 0; test < NR_TESTS; test++) {
             FillRandomArray(H, n, 10, 50000, false, order);
             copySir(H, H_copy, n);
-            BUILD_HEAP_bottomUp(H, n, 1);
+            BUILD_HEAP_bottomUp(H, n);
             copySir(H_copy, H, n);
-            BUILD_HEAP_topDown(H, n, 1);
+            BUILD_HEAP_topDown(H, n);
         }
     }
 
-    p.divideValues("bottomup-a", NR_TESTS);
-    p.divideValues("bottomup-c", NR_TESTS);
-    p.addSeries("bottomup", "bottomup-a", "bottomup-c");
+    p.divideValues("BottomUpAtrib", NR_TESTS);
+    p.divideValues("BottomUpComp", NR_TESTS);
+    p.addSeries("bottomup", "BottomUpAtrib", "BottomUpComp");
 
-    p.divideValues("topdown-a", NR_TESTS);
-    p.divideValues("topdown-c", NR_TESTS);
-    p.addSeries("topdown", "topdown-a", "topdown-c");
+    p.divideValues("TopDownAtrib", NR_TESTS);
+    p.divideValues("TopDownComp", NR_TESTS);
+    p.addSeries("topdown", "TopDownAtrib", "TopDownComp");
 
-    p.createGroup("atribuiri", "bottomup-a", "topdown-a");
-    p.createGroup("comparatii", "bottomup-c", "topdown-c");
+    p.createGroup("atribuiri", "BottomUpAtrib", "TopDownAtrib");
+    p.createGroup("comparatii", "BottomUpComp", "TopDownComp");
     p.createGroup("total", "bottomup", "topdown");
 
     p.showReport();
 }
 void perf_all()
 {
-    //p.reset("Average");
-    //perf(UNSORTED);
-    p.reset("Worst");
-    perf(ASCENDING);
+    perf(UNSORTED);
+    //p.reset("Worst");
+    //perf(ASCENDING);
     p.showReport();
 }
-int main() {
-    demo_HeapSort();
-
+int main()
+{
     //demo_bottomUp();
     //demo_topDown();
-    //perf_all();
-    return 0;
+    //demo_heapsort();
+    perf_all();
 }

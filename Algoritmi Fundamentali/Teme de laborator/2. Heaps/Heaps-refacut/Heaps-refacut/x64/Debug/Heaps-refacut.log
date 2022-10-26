@@ -1,2 +1,3 @@
 ﻿  Heaps-refacut.cpp
-  Heaps-refacut.vcxproj -> C:\Users\vladb\Documents\TUCN2y\Algoritmi Fundamentali\Teme de laborator\2. Heaps\Heaps-refacut\x64\Debug\Heaps-refacut.exe
+C:\Users\vladb\Documents\TUCN2y\Algoritmi Fundamentali\Teme de laborator\2. Heaps\Heaps-refacut\Heaps-refacut\Heaps-refacut.cpp(8,25): error C2871: 'Profiler': a namespace with this name does not exist
+C:\Users\vladb\Documents\TUCN2y\Algoritmi Fundamentali\Teme de laborator\2. Heaps\Heaps-refacut\Heaps-refacut\Heaps-refacut.cpp(10,25): error C2871: 'Profiler': a namespace with this name does not exist
