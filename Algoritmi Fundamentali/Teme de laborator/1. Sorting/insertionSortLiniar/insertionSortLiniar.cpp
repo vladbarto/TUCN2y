@@ -124,8 +124,8 @@ void perf_all()
     p.showReport();
 }
 int main() {
-    //demo();
-    perf_all();
+    demo();
+    //perf_all();
     return 0;
 }
 

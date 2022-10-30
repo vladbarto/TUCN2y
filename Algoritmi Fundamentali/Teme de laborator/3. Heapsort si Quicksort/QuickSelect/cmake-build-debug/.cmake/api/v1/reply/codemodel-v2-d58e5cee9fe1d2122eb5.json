@@ -1,0 +1,60 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.23"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "QuickSelect",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "QuickSelect::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-QuickSelect-Debug-806aec31b9ff470895da.json",
+					"name" : "QuickSelect",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/vlad/Documents/TUCN/Second Year/Algoritmi Fundamentali/Teme de laborator/3. Heapsort si Quicksort/QuickSelect/cmake-build-debug",
+		"source" : "/home/vlad/Documents/TUCN/Second Year/Algoritmi Fundamentali/Teme de laborator/3. Heapsort si Quicksort/QuickSelect"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 4
+	}
+}

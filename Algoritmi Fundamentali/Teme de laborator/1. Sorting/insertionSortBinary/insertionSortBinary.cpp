@@ -106,7 +106,7 @@ void performance_all()
     p.showReport();
 }
 int main() {
-    //demo();
-    performance_all();
+    demo();
+    //performance_all();
     return 0;
 }

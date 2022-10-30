@@ -3,4 +3,4 @@ project(Heapify)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(Heapify main.cpp)
+add_executable(Heapify main.cpp test.cpp test.h)

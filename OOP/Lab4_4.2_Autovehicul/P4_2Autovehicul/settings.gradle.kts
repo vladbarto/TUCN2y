@@ -1,1 +1,0 @@
-rootProject.name = "P4_2Autovehicul"

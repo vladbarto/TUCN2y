@@ -1,0 +1,3 @@
+/home/vlad/Documents/TUCN/Second Year/Algoritmi Fundamentali/Teme de laborator/3. Heapsort si Quicksort/Insertion_Iter_vs_Recurs/cmake-build-debug/CMakeFiles/Insertion_Iter_vs_Recurs.dir
+/home/vlad/Documents/TUCN/Second Year/Algoritmi Fundamentali/Teme de laborator/3. Heapsort si Quicksort/Insertion_Iter_vs_Recurs/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/vlad/Documents/TUCN/Second Year/Algoritmi Fundamentali/Teme de laborator/3. Heapsort si Quicksort/Insertion_Iter_vs_Recurs/cmake-build-debug/CMakeFiles/rebuild_cache.dir

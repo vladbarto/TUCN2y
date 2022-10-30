@@ -1,0 +1,60 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.23"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "Insertion_Iter_vs_Recurs",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "Insertion_Iter_vs_Recurs::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Insertion_Iter_vs_Recurs-Debug-55607037fe8d2fa3d027.json",
+					"name" : "Insertion_Iter_vs_Recurs",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/vlad/Documents/TUCN/Second Year/Algoritmi Fundamentali/Teme de laborator/3. Heapsort si Quicksort/Insertion_Iter_vs_Recurs/cmake-build-debug",
+		"source" : "/home/vlad/Documents/TUCN/Second Year/Algoritmi Fundamentali/Teme de laborator/3. Heapsort si Quicksort/Insertion_Iter_vs_Recurs"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 4
+	}
+}
