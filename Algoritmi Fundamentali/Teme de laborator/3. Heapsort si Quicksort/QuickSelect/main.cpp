@@ -1,5 +1,14 @@
+/*
+ * ce intrebam?
+ * aici in quickselect, cu acel +1
+ * graficul la heapsort
+ * nu am facut documentatia
+ * lasa-ma te rog pana luni
+ */
+
 #include <iostream>
 #include <stdlib.h>
+#include <time.h>
 using namespace std;
 int partitionHoare(int arr[], int indexI, int indexF){
     //where I stands for Initial, F for Final
@@ -23,40 +32,55 @@ int partitionHoare(int arr[], int indexI, int indexF){
         }
     }
 }
-int QUICKSELECT(int arr[], int low, int high, int i){
-    //i - i.th element, desired rank
-    if(low == high)
-        return arr[low];
-    int q = partitionHoare(arr, low, high);
-    int k = q - low + 1;
-    if(i == k)
-        return arr[q];
+int random(int a, int b)
+{
+    int x = rand()%2;
+    if(x == 0)
+        return a;
+    else
+        return b;
+}
+int Randomized_Partition(int arr[], int p, int r)//efectiv din Cormen
+{
+    int i = random(p, r);
+    swap(arr[r], arr[i]);
+    return partitionHoare(arr, p, r);
+}
+int Randomized_Select(int A[], int p, int r, int i) // return the ith smallest elem. of A[p..r]
+{
+    if (p == r)
+        return A[p];
+    int q = Randomized_Partition(A,p,r); // compute pivot
+    int k = q-p+1; // number of elements <= pivot
+    if (i+1 == k)//aici era i == k initial
+        return A[q]; // found ith smallest element
     else
     {
-        if(i < k)
-            return QUICKSELECT(arr, low, q, i);
-        else
-            return QUICKSELECT(arr, q+1, high, i-k);
+        if (i < k)
+            return Randomized_Select(A,p,q-1,i);
+        else Randomized_Select(A,q+1,r, i-k);
     }
 }
+
 void demo()
 {
     //int arr[] = {25, 11, 38, 8, 51, 34, 29};
     int arr[] = {25, 11, 38, 8, 51};
     int n = sizeof(arr)/sizeof(arr[0]);
-    int x = QUICKSELECT(arr, 0, n-1, 0);
-    int y = QUICKSELECT(arr, 0, n-1, 1);
-    int z = QUICKSELECT(arr, 0, n-1, 2);
-    int a = QUICKSELECT(arr, 0, n-1, 3);
-    int b = QUICKSELECT(arr, 0, n-1, 4);
-    int c = QUICKSELECT(arr, 0, n-1, 5);
-    int d = QUICKSELECT(arr, 0, n-1, 6);
-    int e = QUICKSELECT(arr, 0, n-1, 7);
+    int x = Randomized_Select(arr, 0, n-1, 0);
+    int y = Randomized_Select(arr, 0, n-1, 1);
+    int z = Randomized_Select(arr, 0, n-1, 2);
+    int a = Randomized_Select(arr, 0, n-1, 3);
+    int b = Randomized_Select(arr, 0, n-1, 4);//.
+    int c = Randomized_Select(arr, 0, n-1, 5);
+    int d = Randomized_Select(arr, 0, n-1, 6);
+    int e = Randomized_Select(arr, 0, n-1, 7);
     //cout<<y<<endl;
-    printf("%d %d %d %d %d %d %d %d", x, y, z, a, b, c, d, e);
+    printf("%d %d %d <%d> %d %d %d %d", x, y, z, a, b, c, d, e);
 }
 int main() {
     printf("Hallo Leute!\n");
+    //
     demo();
     return 0;
 }

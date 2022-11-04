@@ -1,0 +1,60 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.23"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "k_liste",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "k_liste::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-k_liste-Debug-72d0e2f8501cf6f48493.json",
+					"name" : "k_liste",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/vlad/Documents/TUCN/Second Year/Algoritmi Fundamentali/Teme de laborator/4. Kway Merge. Heaps/Coduri initiale CLion/k_liste/cmake-build-debug",
+		"source" : "/home/vlad/Documents/TUCN/Second Year/Algoritmi Fundamentali/Teme de laborator/4. Kway Merge. Heaps/Coduri initiale CLion/k_liste"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 4
+	}
+}

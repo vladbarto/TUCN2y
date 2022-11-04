@@ -162,8 +162,8 @@ void perf(int order)
             FillRandomArray(H, n, 10, 50000, false, order);
             copySir(H, H_copy, n);
             BUILD_HEAP_bottomUp(H, n);
-            copySir(H_copy, H, n);
-            BUILD_HEAP_topDown(H, n);
+            //copySir(H_copy, H, n);
+            //BUILD_HEAP_topDown(H, n);
         }
     }
 
@@ -171,21 +171,21 @@ void perf(int order)
     p.divideValues("BottomUpComp", NR_TESTS);
     p.addSeries("bottomup", "BottomUpAtrib", "BottomUpComp");
 
-    p.divideValues("TopDownAtrib", NR_TESTS);
+    /*p.divideValues("TopDownAtrib", NR_TESTS);
     p.divideValues("TopDownComp", NR_TESTS);
     p.addSeries("topdown", "TopDownAtrib", "TopDownComp");
 
     p.createGroup("atribuiri", "BottomUpAtrib", "TopDownAtrib");
     p.createGroup("comparatii", "BottomUpComp", "TopDownComp");
     p.createGroup("total", "bottomup", "topdown");
-
+*/
     p.showReport();
 }
 void perf_all()
 {
     perf(UNSORTED);
-    p.reset("Worst");
-    perf(ASCENDING);
+    //p.reset("Worst");
+    //perf(ASCENDING);
     p.showReport();
 }
 int main()
