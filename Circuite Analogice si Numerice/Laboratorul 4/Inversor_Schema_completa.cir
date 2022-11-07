@@ -1,0 +1,35 @@
+[aimspice]
+[description]
+232
+Inversor cu tranzistor 2
+R1 IN B 1K
+RC OUT EC 1K
+C1 IN B 75P
+RB B EB 7K
+Cout OUT 0 1p
+Q1 OUT B 0 TRANZISTOR
+.Model TRANZISTOR NPN TR=5e-9 TF=8e-9
+VIN IN 0 DC 5 PULSE(0 5 0 1e-9 1e-9 1e-7 2e-7)
+VEC EC 0 DC 5 
+VEB EB 0 DC -1
+[tran]
+1e-9
+6e-7
+X
+X
+0
+[ana]
+4 2
+0
+1 1
+1 1 -4 6
+3
+v(in)
+v(b)
+v(out)
+0
+1 1
+1 1 -0.8 0.4
+1
+i(vin)
+[end]

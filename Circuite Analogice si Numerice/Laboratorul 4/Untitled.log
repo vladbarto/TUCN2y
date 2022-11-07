@@ -1,0 +1,68 @@
+
+                 *********************************************
+                 *                                           *
+                 *             A I M - S p i c e             *
+                 *                                           *
+                 *         Professional Version 2020.100           *
+                 *                                           *
+                 *********************************************
+
+	Date: Wed Nov  2 12:27:22 2022
+	Circuit File: Untitled
+	Analysis: Transient
+
+**************************  Circuit Description  **************************
+
+     1:  Inversor cu tranzistor 2
+     2:  R1 IN B 1K
+     3:  RC OUT EC 1K
+     4:  C1 IN B 75P
+     5:  RB B EB 7K
+     6:  Cout OUT 0 1p
+     7:  Q1 OUT B 0 TRANZISTOR
+     8:  .Model TRANZISTOR NPN TR=5e-9 TF=8e-9
+     9:  VIN IN 0 DC 5 PULSE(0 5 0 1e-9 1e-9 1e-7 2e-7)
+    10:  VEC EC 0 DC 5 
+    11:  VEB EB 0 DC -1
+    12:  .tran 1e-9 6e-7
+
+***************************  Model Parameters  ****************************
+
+
+***************  Device Parameters (Only for .op analysis)  ***************
+
+
+
+**************************  Analysis Parameters  **************************
+
+	Stepsize ............ : 1e-9
+	Final time .......... : 6e-7
+	Use Initial Conditions: Off
+
+
+
+**************  Options (Only those different from default)  **************
+
+
+
+*************************  Simulation Statistics  *************************
+
+	Total number of iterations.....................: 766
+	Number of iterations for transient analysis....: 761
+	Total number of timepoints.....................: 226
+	Number of timepoints accepted..................: 189
+	Number of timepoints rejected..................: 37
+	Total analysis time (sec)......................: 0.025
+	Transient analysis time (sec)..................: 0.023
+	Time spent in device loading (sec).............: 0
+	Time spent in L-U decomposition (sec)..........: 0
+	Time spent in matrix reordering (sec)..........: 0
+	Time spent in matrix solving (sec).............: 0
+	Time spent in transient L-U decomposition (sec): 0
+	Time spent in transient matrix solving (sec)...: 0
+
+***************************  Kernel Messages  *****************************
+
+Circuit: Inversor cu tranzistor 2
+
+
