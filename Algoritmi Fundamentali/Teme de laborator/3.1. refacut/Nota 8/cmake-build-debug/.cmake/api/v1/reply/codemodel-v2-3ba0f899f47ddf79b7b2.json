@@ -1,0 +1,60 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.23"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "Nota_8",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "Nota_8::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Nota_8-Debug-b325db1e869b467c63ee.json",
+					"name" : "Nota_8",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/vladb/Documents/TUCN2y/Algoritmi Fundamentali/Teme de laborator/3.1. Quicksort. Quickselect/Nota 8/cmake-build-debug",
+		"source" : "C:/Users/vladb/Documents/TUCN2y/Algoritmi Fundamentali/Teme de laborator/3.1. Quicksort. Quickselect/Nota 8"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 4
+	}
+}
