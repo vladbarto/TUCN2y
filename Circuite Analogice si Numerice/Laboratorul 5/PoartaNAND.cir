@@ -1,0 +1,50 @@
+[aimspice]
+[description]
+391
+Poarta Nand
+C1 OUT 0 15p
+R1 CC 1 4K
+R2 CC 3 1.6K
+R3 4 0 1K
+R4 CC 5 130
+D1 0 A DiodaSi
+D2 0 B DiodaSi
+D3 6 OUT DiodaSi
+.Model DiodaSi D tt=5e-9
+Q1A 2 1 A TRANZISTOR
+Q1B 2 1 B TRANZISTOR
+Q2 3 2 4 TRANZISTOR
+Q3 OUT 4 0 TRANZISTOR
+Q4 5 3 OUT TRANZISTOR
+.Model TRANZISTOR NPN TR=5e-9 TF=8e-9
+VA A 0 DC 0 PULSE(0 5 0 1e-9 1e-9 1e-6 2e-6)
+VB B 0 DC 0
+VCC CC 0 DC 5
+Vscurt OUT 0 0
+[dc]
+1
+VA
+0
+5
+.1
+[tran]
+1e-9
+6e-6
+X
+X
+0
+[ana]
+1 2
+0
+1 1
+1 1 0.04045 0.040451
+1
+i(vscurt)
+0
+1 1
+1 1 -1 6
+3
+v(out)
+v(a)
+v(b)
+[end]
