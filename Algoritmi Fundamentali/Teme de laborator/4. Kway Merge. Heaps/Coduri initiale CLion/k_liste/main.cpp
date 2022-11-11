@@ -1,5 +1,8 @@
 #include <iostream>
+#include "Profiler.h"
 using namespace std;
+//Profiler p("kiwi lists");
+
 typedef struct Node{
     int key;
     struct Node *next;
@@ -43,11 +46,11 @@ void insertLast(List *lista, int keyToBeInserted)
     }
     lista->size = lista->size + 1;
 }
-void generateKLists
+/*void generateKLists
 void KWAYMERGE(int a[], int k)
 {
 
-}
+}*/
 int main() {
     ListT lista;
 
