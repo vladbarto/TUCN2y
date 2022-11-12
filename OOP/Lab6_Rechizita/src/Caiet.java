@@ -5,7 +5,7 @@ public class Caiet extends Rechizita {
     }
 
     public String getNume() {
-        return super.getEticheta()
+        return super.eticheta
                 + " Caiet"; //afisati eticheta care e in parinte
 
     }

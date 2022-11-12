@@ -1,8 +1,10 @@
-public class Rechizita {
-    private String eticheta;
-    public Rechizita(String eticheta){
-        this.eticheta = eticheta;
+public abstract class Rechizita {
+    String eticheta;
+
+    public Rechizita(String eticheta) {
+        this.eticheta= eticheta;
     }
+
     public abstract String getNume();
 
     public String getEticheta() {

@@ -5,7 +5,7 @@ public class Manual extends Rechizita {
     }
 
     public String getNume() {
-        return super.getEticheta()
+        return super.eticheta
                 + " Manual"; //afisati eticheta care e in parinte
 
     }
