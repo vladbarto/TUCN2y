@@ -1,0 +1,3 @@
+C:/Users/vladb/Desktop/k2/cmake-build-debug/CMakeFiles/k2.dir
+C:/Users/vladb/Desktop/k2/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/vladb/Desktop/k2/cmake-build-debug/CMakeFiles/rebuild_cache.dir
