@@ -1,0 +1,60 @@
+
+                 *********************************************
+                 *                                           *
+                 *             A I M - S p i c e             *
+                 *                                           *
+                 *         Professional Version 2020.100           *
+                 *                                           *
+                 *********************************************
+
+	Date: Wed Nov 16 15:28:18 2022
+	Circuit File: C:\Users\vladb\Documents\TUCN2y\Circuite Analogice si Numerice\Laboratorul 6\Inversor analiza 1 dc.cir
+	Analysis: DC Transfer Curves
+
+**************************  Circuit Description  **************************
+
+     1:  Inversor cu NMOS
+     2:  M3 DD GG OUT OUT n_mos1 L=1U W=1U 
+     3:  .model n_mos1 nmos vto=2.5
+     4:  M2 OUT IN 0 0 n_mos2 L=1U W=1U
+     5:  .model n_mos2 nmos vto=2.5
+     6:  VIN IN 0 DC 5 PULSE(0 5 0 1e-10 1e-10 1e-9 2e-9)
+     7:  VGG GG 0 DC 5
+     8:  VDD DD 0 DC 5
+     9:  !C OUT 0.5p
+    10:  .dc VIN 0 5 0.1
+
+***************************  Model Parameters  ****************************
+
+
+***************  Device Parameters (Only for .op analysis)  ***************
+
+
+
+**************************  Analysis Parameters  **************************
+
+	Source name #1 .. : VIN
+	Start value #1 .. : 0
+	End value #1 .... : 5
+	Increment value #1: 0.1
+
+
+
+**************  Options (Only those different from default)  **************
+
+
+
+*************************  Simulation Statistics  *************************
+
+	Total number of iterations...........: 110
+	Total analysis time (sec)............: 0.007
+	Time spent in device loading (sec)...: 0.002
+	Time spent in L-U decomposition (sec): 0
+	Time spent in matrix reordering (sec): 0
+	Time spent in matrix solving (sec)...: 0
+
+***************************  Kernel Messages  *****************************
+
+Circuit: Inversor cu NMOS
+
+

@@ -1,0 +1,9 @@
+[aimspice]
+[description]
+108
+Filtru Trece Sus
+C1 IN OUT 470n
+R1 OUT 0 1K
+VIN IN 0 DC 5 sin(0 5 1K 0 0)
+!VIN IN 0 DC 5 sin(0 5 20 0 0)
+[end]

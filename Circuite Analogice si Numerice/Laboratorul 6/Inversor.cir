@@ -1,0 +1,19 @@
+[aimspice]
+[description]
+241
+Inversor cu NMOS
+M3 GG DD OUT OUT n_mos1 M3: L=25U W=1U 
+.model n_mos1 nmos vto=2.5
+M2 IN OUT 0 0 n_mos1 M2: L=25U W=1U
+.model n_mos1 nmos vto=2.5
+VIN IN 0 DC 5 PULSE(0 5 1e-10 1e-10 1e-9 2e-9)
+VGG GG 0 DC 5
+VDD DD 0 DC 5
+!C OUT 0.5p
+[dc]
+1
+VIN
+X
+X
+X
+[end]
