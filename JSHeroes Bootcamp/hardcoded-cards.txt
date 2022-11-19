@@ -1,0 +1,45 @@
+<div>CONTAINERE TIP CARTELE
+      <section>
+        <ul class = "grup-cartele">
+          <li class="cartele">
+            <h1>freeCodeCamp/freeCodeCamp</h1>
+            <div>freeCodeCamp.org's open-source codebase and curiculum.
+               Learn to code for free</div>
+               <span>Stars: 357296</span>
+               <span>Forks: 30453</span>
+          </li>
+          <li class="cartele">
+            <h1>996icu/996.ICU</h1>
+            <div>Repo for counting stars and contributing.
+               Press F to pay respect to glorious developers.</div>
+            <span>Stars: 264481</span>
+            <span>Forks: 21482</span>
+          </li>
+          <li class="cartele">
+            <h1>EbookFoundation/free-programming-books</h1>
+            <div>:books: Freely available programming books</div>
+            <span>Stars: 255579</span>
+            <span>Forks: 52528</span>
+          </li>
+          <li class="cartele">
+            <h1>996icu/996.ICU</h1>
+            <div>Repo for counting stars and contributing.
+               Press F to pay respect to glorious developers.</div>
+            <span>Stars: 264481</span>
+            <span>Forks: 21482</span>
+          </li>
+          <li class="cartele">
+            <h1>EbookFoundation/free-programming-books</h1>
+            <div>:books: Freely available programming books</div>
+            <span>Stars: 255579</span>
+            <span>Forks: 52528</span>
+          </li>
+          <li class="cartele">
+            <h1>freeCodeCamp/freeCodeCamp2</h1>
+            <div>freeCodeCamp.org's open-source codebase and curiculum.
+               Learn to code for free</div>
+               <span>Stars: 357296</span>
+               <span>Forks: 30453</span>
+          </li>
+        </ul>
+      </section>
