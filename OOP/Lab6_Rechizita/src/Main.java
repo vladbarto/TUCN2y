@@ -18,8 +18,8 @@ public class Main {
 //		ghiozdan.addRechizita(c1);
 //		ghiozdan.addRechizita(c3);
 //		ghiozdan.addRechizita(m1);
-//
-//		ghiozdan.listItems();
+
+//      ghiozdan.listItems();
 //		ghiozdan.listManual();
 
         System.out.println(ghiozdan.getNrRechizite());
@@ -36,5 +36,9 @@ public class Main {
 
         ghiozdan.addRechizita(c1);
         listaRechizite.remove(c1);
+        System.out.println(listaRechizite.size());
+        for(Rechizita i:listaRechizite){
+            System.out.println(i.getNume());
+        }
     }
 }

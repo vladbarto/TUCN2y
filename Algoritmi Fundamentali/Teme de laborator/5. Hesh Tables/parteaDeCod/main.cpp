@@ -5,11 +5,6 @@ typedef struct {
     int id;
     char name[30];
 }Entry;
-typedef struct {
-    Entry *T;//TODO REFA CU UN VECCTOR SI 2 INT-URI
-    int size;
-    int capacity;
-}EntryArray;
 void printHash(Entry [], int, int);
 float getFactorUmplere(int n, int m)
 {
@@ -28,10 +23,10 @@ int h(int key, int nrOfTries, int m){
     //Avand structura Entry, noi vom trimite functiei doar element.id, care e un int;
     //astfel, nu mai trimitem si valoarea;
 }
-void hashInsert(Entry T[], int *size, int capacity, Entry element){
+void hashInsert(Entry *tabela, int *size, int capacity, Entry element){
     int i = 0;
     //while(T[h(element.key, i, capacity)].)
-    T[h(element.id, i, capacity)] = element;
+    tabela.T[h(element.id, i, capacity)] = element;
     *size++;
     //size = n; capacity = m;
     printHash(T, capacity, *size);
@@ -73,6 +68,13 @@ void keepReading()
         }
     }while(stop == true);
     printf("Citirea s-a incheiat");
+}
+void demo(){
+    int m = 10;
+    int T[m];
+    int size = 0; //=n, cate elemente avem in tabela
+    int capacity = m;//cate elemente putem baga
+
 }
 int main() {
 

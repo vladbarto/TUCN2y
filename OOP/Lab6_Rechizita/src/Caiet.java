@@ -9,4 +9,11 @@ public class Caiet extends Rechizita {
                 + " Caiet"; //afisati eticheta care e in parinte
 
     }
+
+    @Override
+    public String toString() {
+        return "Caiet{" +
+                "eticheta='" + eticheta + '\'' +
+                '}';
+    }
 }
